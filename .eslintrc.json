@@ -5,5 +5,9 @@
     "sourceType": "module"
   },
   "extends": ["plugin:vue/vue3-recommended"],
-  "rules": {}
+  "rules": {
+    "semi": "error",
+    "quotes": ["error", "double"],
+    "no-multiple-empty-lines": "error"
+  }
 }
