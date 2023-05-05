@@ -1,16 +1,13 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="sidebar">
-    SideBar
-  </div>
+  <div class="sidebar">SideBar</div>
 </template>
 
 <style scoped>
-.sidebar{
+.sidebar {
   background-color: var(--dark-secondary);
-  height:100vh;
+  height: 100vh;
 }
 @media (prefers-color-scheme: light) {
   .sidebar {
