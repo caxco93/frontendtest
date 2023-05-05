@@ -4,7 +4,7 @@ import SideBar from "./components/SideBar.vue";
 </script>
 
 <template>
-  <div>
+  <div class="app">
     <main>
       <ChessBoard />
     </main>
@@ -15,4 +15,9 @@ import SideBar from "./components/SideBar.vue";
 </template>
 
 <style scoped>
+.app{
+  display:grid;
+  grid-template-columns: 1fr 300px;
+  height: 100vh;
+}
 </style>
