@@ -6,14 +6,14 @@ const getSquareClass = (row: number, column: number): string => {
 
 <template>
   <div class="board">
-    <div v-for="row in 8" :key="row" class="rank">
+    <template v-for="row in 8">
       <div
         v-for="column in 8"
-        :key="column"
+        :key="`${row}${column}`"
         class="square"
         :class="getSquareClass(row, column)"
       />
-    </div>
+    </template>
   </div>
 </template>
 
@@ -22,16 +22,9 @@ const getSquareClass = (row: number, column: number): string => {
   max-width: 100vh;
   margin: auto;
   aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-}
-.rank {
-  display: flex;
-  flex: 1;
-}
-.square {
-  display: inline-block;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
 .light {
   background-color: #eeeed2;
