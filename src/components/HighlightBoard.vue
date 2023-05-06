@@ -16,7 +16,9 @@ function key(square: Coordinate) {
     />
   </div>
 </template>
-<style>
+<style scoped>
+@import "@/styles/board.css";
+
 .highlight {
   position: absolute;
   top: 0;

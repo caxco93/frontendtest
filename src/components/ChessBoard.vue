@@ -25,14 +25,8 @@ function handleSquareClick(row: number, column: number) {
 </template>
 
 <style scoped>
-:global(.board) {
-  max-width: 100vh;
-  margin: auto;
-  aspect-ratio: 1;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-}
+@import "@/styles/board.css";
+
 .light {
   background-color: #eeeed2;
 }
