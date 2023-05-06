@@ -19,5 +19,8 @@ function rank() {
 .square {
   grid-column-start: v-bind(file());
   grid-row-start: v-bind(rank());
+  background-color: rgb(235, 97, 80);
+  opacity: 0.8;
+  pointer-events: auto;
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { store } from "@/store.ts";
-import HighlightSquare from "./HighlightSquare.vue";
 import { Coordinate } from "@/types";
+import HighlightBoard from "./HighlightBoard.vue";
 const getSquareClass = (row: number, column: number): string => {
   return (row + column) % 2 === 0 ? "light" : "dark";
 };
@@ -24,13 +24,7 @@ function handleSquareClick(row: number, column: number) {
         />
       </template>
     </div>
-    <div class="board highlight">
-      <HighlightSquare
-        v-for="square in store.highlighted"
-        :key="square"
-        :coordinate="square"
-      />
-    </div>
+    <HighlightBoard />
   </div>
 </template>
 
@@ -45,19 +39,6 @@ function handleSquareClick(row: number, column: number) {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
-}
-.highlight {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-}
-.highlight :deep(.square) {
-  background-color: rgb(235, 97, 80);
-  opacity: 0.8;
-  pointer-events: auto;
 }
 .light {
   background-color: #eeeed2;
