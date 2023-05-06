@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { store } from "@/store.ts";
 import HighlightSquare from "./HighlightSquare.vue";
+import { Coordinate } from "@/types";
+
+function key(square: Coordinate) {
+  return `${square.file}${square.rank}`;
+}
 </script>
 <template>
   <div class="board highlight">
     <HighlightSquare
       v-for="square in store.highlighted"
-      :key="square"
+      :key="key(square)"
       :coordinate="square"
     />
   </div>
