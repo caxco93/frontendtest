@@ -6,7 +6,7 @@ const getSquareClass = (row: number, column: number): string => {
 };
 function handleSquareClick(row: number, column: number) {
   const coordinate: Coordinate = { file: column, rank: row };
-  store.highlighted.push(coordinate);
+  store.addHighlight(coordinate);
 }
 </script>
 
