@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { store } from "@/store.ts";
 import HighlightSquare from "./HighlightSquare.vue";
+import { Coordinate } from "@/types";
 const getSquareClass = (row: number, column: number): string => {
   return (row + column) % 2 === 0 ? "light" : "dark";
 };
+function handleSquareClick(row: number, column: number) {
+  const coordinate: Coordinate = { file: column, rank: row };
+  store.highlighted.push(coordinate);
+}
 </script>
 
 <template>
@@ -15,6 +20,7 @@ const getSquareClass = (row: number, column: number): string => {
           :key="`${row}${column}`"
           class="square"
           :class="getSquareClass(row, column)"
+          @click="handleSquareClick(row, column)"
         />
       </template>
     </div>
@@ -46,10 +52,12 @@ const getSquareClass = (row: number, column: number): string => {
   bottom: 0;
   left: 0;
   right: 0;
+  pointer-events: none;
 }
 .highlight :deep(.square) {
   background-color: rgb(235, 97, 80);
   opacity: 0.8;
+  pointer-events: auto;
 }
 .light {
   background-color: #eeeed2;
