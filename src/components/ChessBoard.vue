@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { store } from "@/store.ts";
+import HighlightSquare from "./HighlightSquare.vue";
 const getSquareClass = (row: number, column: number): string => {
   return (row + column) % 2 === 0 ? "light" : "dark";
 };
@@ -17,7 +19,11 @@ const getSquareClass = (row: number, column: number): string => {
       </template>
     </div>
     <div class="board highlight">
-      <div class="square"></div>
+      <HighlightSquare
+        v-for="square in store.highlighted"
+        :key="square"
+        :coordinate="square"
+      />
     </div>
   </div>
 </template>
@@ -41,9 +47,7 @@ const getSquareClass = (row: number, column: number): string => {
   left: 0;
   right: 0;
 }
-.highlight .square {
-  grid-column-start: 4;
-  grid-row-start: 4;
+.highlight :deep(.square) {
   background-color: rgb(235, 97, 80);
   opacity: 0.8;
 }
