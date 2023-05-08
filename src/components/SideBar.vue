@@ -10,7 +10,7 @@ import { store } from "@/store.ts";
 <style scoped>
 .sidebar {
   background-color: var(--dark-secondary);
-  height: 100vh;
+  height: 100%;
 }
 @media (prefers-color-scheme: light) {
   .sidebar {

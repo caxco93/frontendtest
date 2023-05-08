@@ -23,10 +23,8 @@ const files: Array<FileLetter> = ["a", "b", "c", "d", "e", "f", "g", "h"];
 </template>
 
 <style scoped lang="scss">
+@import "@/styles/board.css";
 .board {
-  max-width: 100vh;
-  margin: auto;
-  aspect-ratio: 1;
   display: flex;
   flex-direction: column-reverse;
 }
