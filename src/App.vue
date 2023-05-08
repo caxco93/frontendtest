@@ -19,12 +19,24 @@ import SideBar from "./components/SideBar.vue";
 </template>
 
 <style scoped>
+main {
+  display: flex;
+  align-items: center;
+}
 .wrapper {
+  flex: 1;
   position: relative;
 }
 .app {
   display: grid;
   grid-template-columns: 1fr 300px;
   height: 100vh;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .app {
+    grid-template-columns: auto;
+    grid-template-rows: min-content 1fr;
+  }
 }
 </style>
