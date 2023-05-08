@@ -35,20 +35,30 @@ const reset = () => {
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 h3 {
   margin: 0;
+  order: 1;
 }
 ol {
   margin: 0;
   flex: 1;
   height: 100%;
   overflow-y: auto;
+  order: 2;
 }
 
 .toolbar {
   padding: 8px;
   margin-bottom: 8px;
+  order: 3;
 }
 .button {
   background-color: #95bb4a;
@@ -75,8 +85,11 @@ ol {
 }
 
 @media (max-aspect-ratio: 1/1) {
-  .container {
-    max-height: 100%;
+  .toolbar {
+    order: 2;
+  }
+  ol {
+    order: 3;
   }
 }
 </style>
