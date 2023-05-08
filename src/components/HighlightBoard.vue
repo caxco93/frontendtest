@@ -11,7 +11,7 @@ function key(square: Coordinate) {
 <template>
   <div class="board overlay">
     <HighlightSquare
-      v-for="square in store.highlighted"
+      v-for="square in store.highlighted.slice(-1)"
       :key="key(square)"
       v-bind="square"
     />
