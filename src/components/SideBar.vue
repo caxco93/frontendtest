@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { store } from "@/store.ts";
+import ClickedHistory from "./ClickedHistory.vue";
 </script>
 
 <template>
-  <!-- Temporary rudimentary visualization for easier verification-->
-  <div class="sidebar">{{ JSON.stringify(store.highlighted) }}</div>
+  <div class="sidebar">
+    <ClickedHistory />
+  </div>
 </template>
 
 <style scoped>
