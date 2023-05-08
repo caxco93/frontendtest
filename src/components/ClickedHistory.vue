@@ -14,7 +14,7 @@ const reset = () => {
   <div class="container">
     <h3>Square History</h3>
     <div class="toolbar">
-      <button class="button" @click="reset">Reset</button>
+      <button class="button" ontouchstart="" @click="reset">Reset</button>
     </div>
     <ol>
       <li
@@ -64,6 +64,10 @@ ol {
   border: 0;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0 0 #537133;
+}
+.button:active {
+  transform: translateY(0.15rem);
+  box-shadow: 0 0.1rem 0 0 #537133;
 }
 
 .notation {
