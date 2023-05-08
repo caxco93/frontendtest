@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ChessBoard from "./components/ChessBoard.vue";
 import HighlightBoard from "./components/HighlightBoard.vue";
+import FileRankInfo from "./components/FileRankInfo.vue";
 import SideBar from "./components/SideBar.vue";
 </script>
 
@@ -9,6 +10,7 @@ import SideBar from "./components/SideBar.vue";
     <main>
       <div class="wrapper">
         <ChessBoard />
+        <FileRankInfo />
         <HighlightBoard />
       </div>
     </main>
