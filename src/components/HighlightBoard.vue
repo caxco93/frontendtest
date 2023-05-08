@@ -7,15 +7,17 @@ function key(square: Coordinate) {
   return `${square.file}${square.rank}`;
 }
 </script>
+
 <template>
   <div class="board highlight">
     <HighlightSquare
       v-for="square in store.highlighted"
       :key="key(square)"
-      :coordinate="square"
+      v-bind="square"
     />
   </div>
 </template>
+
 <style scoped>
 @import "@/styles/board.css";
 

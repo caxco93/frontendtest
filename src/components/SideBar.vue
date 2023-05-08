@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { store } from "@/store.ts";
+</script>
 
 <template>
-  <div class="sidebar">SideBar</div>
+  <!-- Temporary rudimentary visualization for easier verification-->
+  <div class="sidebar">{{ JSON.stringify(store.highlighted) }}</div>
 </template>
 
 <style scoped>
