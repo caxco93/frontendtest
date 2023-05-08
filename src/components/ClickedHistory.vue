@@ -13,7 +13,10 @@ const reset = () => {
 const list = ref<HTMLElement | null>(null);
 
 watch(store.highlighted, (_) => {
-  const listElement = list.value!;
+  if (list.value === null) {
+    return;
+  }
+  const listElement = list.value;
   setTimeout(() => {
     listElement.scrollTo(0, listElement.scrollHeight);
   }, 0);
