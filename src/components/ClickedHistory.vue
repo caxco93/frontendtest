@@ -4,13 +4,17 @@ import { Coordinate } from "@/types";
 
 const displayCoordinate = (square: Coordinate) =>
   `${square.file}${square.rank}`;
+
+const reset = () => {
+  store.reset();
+};
 </script>
 
 <template>
   <div class="container">
     <h3>Square History</h3>
     <div class="toolbar">
-      <button class="button">Reset</button>
+      <button class="button" @click="reset">Reset</button>
     </div>
     <ol>
       <li
