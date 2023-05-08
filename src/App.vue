@@ -19,7 +19,12 @@ import SideBar from "./components/SideBar.vue";
 </template>
 
 <style scoped>
+main {
+  display: flex;
+  align-items: center;
+}
 .wrapper {
+  flex: 1;
   position: relative;
 }
 .app {
