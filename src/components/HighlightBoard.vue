@@ -9,7 +9,7 @@ function key(square: Coordinate) {
 </script>
 
 <template>
-  <div class="board highlight">
+  <div class="board overlay">
     <HighlightSquare
       v-for="square in store.highlighted"
       :key="key(square)"
@@ -20,15 +20,5 @@ function key(square: Coordinate) {
 
 <style scoped>
 @import "@/styles/board.css";
-
-.highlight {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-}
+@import "@/styles/overlay.css";
 </style>
