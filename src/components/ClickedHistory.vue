@@ -9,6 +9,9 @@ const displayCoordinate = (square: Coordinate) =>
 <template>
   <div class="container">
     <h3>Square History</h3>
+    <div class="toolbar">
+      <button class="button">Reset</button>
+    </div>
     <ol>
       <li
         v-for="square in store.highlighted"
@@ -26,14 +29,39 @@ const displayCoordinate = (square: Coordinate) =>
   padding: 8px;
   box-sizing: border-box;
   max-height: 100vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 h3 {
-  margin-top: 0;
+  margin: 0;
 }
 ol {
   margin: 0;
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
 }
+
+.toolbar {
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.button {
+  background-color: #95bb4a;
+  color: white;
+  width: 100%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.4);
+  padding: 0.6rem;
+
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0 0 #537133;
+}
+
 .notation {
   font-weight: bolder;
 }
@@ -41,7 +69,6 @@ ol {
 @media (max-aspect-ratio: 1/1) {
   .container {
     max-height: 100%;
-    overflow-y: unset;
   }
 }
 </style>
