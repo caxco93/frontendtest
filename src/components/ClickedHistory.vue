@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { store } from "@/store.ts";
 import { Coordinate } from "@/types";
+import { ref, watch } from "vue";
 
 const displayCoordinate = (square: Coordinate) =>
   `${square.file}${square.rank}`;
@@ -8,6 +9,15 @@ const displayCoordinate = (square: Coordinate) =>
 const reset = () => {
   store.reset();
 };
+
+const list = ref<HTMLElement | null>(null);
+
+watch(store.highlighted, (_) => {
+  const listElement = list.value!;
+  setTimeout(() => {
+    listElement.scrollTo(0, listElement.scrollHeight);
+  }, 0);
+});
 </script>
 
 <template>
@@ -16,7 +26,7 @@ const reset = () => {
     <div class="toolbar">
       <button class="button" ontouchstart="" @click="reset">Reset</button>
     </div>
-    <ol>
+    <ol ref="list">
       <li
         v-for="square in store.highlighted"
         v-bind="square"
