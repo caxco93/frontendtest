@@ -24,6 +24,9 @@ const displayCoordinate = (square: Coordinate) =>
 <style scoped lang="scss">
 .container {
   padding: 8px;
+  box-sizing: border-box;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 h3 {
   margin-top: 0;
@@ -33,5 +36,12 @@ ol {
 }
 .notation {
   font-weight: bolder;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .container {
+    max-height: 100%;
+    overflow-y: unset;
+  }
 }
 </style>
