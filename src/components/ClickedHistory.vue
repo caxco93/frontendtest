@@ -15,7 +15,7 @@ const displayCoordinate = (square: Coordinate) =>
         v-bind="square"
         :key="displayCoordinate(square)"
       >
-        <span>{{ displayCoordinate(square) }}</span>
+        <span class="notation">{{ displayCoordinate(square) }}</span>
       </li>
     </ol>
   </div>
@@ -30,5 +30,8 @@ h3 {
 }
 ol {
   margin: 0;
+}
+.notation {
+  font-weight: bolder;
 }
 </style>
