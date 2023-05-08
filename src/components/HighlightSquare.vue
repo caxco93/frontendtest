@@ -1,24 +1,22 @@
 <script setup lang="ts">
-import { Coordinate } from "@/types";
+import { FileLetter } from "@/types";
+import { computed } from "vue";
+
 const props = defineProps<{
-  coordinate: Coordinate;
+  file: FileLetter;
+  rank: number;
 }>();
 
-function file() {
-  return props.coordinate.file;
-}
-function rank() {
-  return props.coordinate.rank;
-}
+const gridArea = computed(() => `${props.file}${props.rank}`);
 </script>
+
 <template>
   <div class="square"></div>
 </template>
 
 <style scoped>
 .square {
-  grid-column-start: v-bind(file());
-  grid-row-start: v-bind(rank());
+  grid-area: v-bind(gridArea);
   background-color: rgb(235, 97, 80);
   opacity: 0.8;
   pointer-events: auto;
