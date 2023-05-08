@@ -27,4 +27,11 @@ import SideBar from "./components/SideBar.vue";
   grid-template-columns: 1fr 300px;
   height: 100vh;
 }
+
+@media (max-aspect-ratio: 1/1) {
+  .app {
+    grid-template-columns: auto;
+    grid-template-rows: min-content 1fr;
+  }
+}
 </style>
