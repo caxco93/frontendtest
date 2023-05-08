@@ -12,6 +12,7 @@ import ClickedHistory from "./ClickedHistory.vue";
 .sidebar {
   background-color: var(--dark-secondary);
   height: 100%;
+  position: relative;
 }
 @media (prefers-color-scheme: light) {
   .sidebar {
