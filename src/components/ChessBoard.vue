@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import { store } from "@/store.ts";
-import { Coordinate } from "@/types";
-function handleSquareClick(row: number, column: number) {
-  const coordinate: Coordinate = { file: column, rank: row };
+import { Coordinate, FileLetter } from "@/types";
+
+function handleSquareClick(file: FileLetter, rank: number) {
+  const coordinate: Coordinate = { file, rank };
   store.addHighlight(coordinate);
 }
+const files: Array<FileLetter> = ["a", "b", "c", "d", "e", "f", "g", "h"];
 </script>
 
 <template>
   <div class="board">
-    <div v-for="row in 8" :key="row" class="rank">
+    <div v-for="rank in 8" :key="rank" class="rank">
       <div
-        v-for="column in 8"
-        :key="column"
+        v-for="file in files"
+        :key="file"
         class="square"
-        @click="handleSquareClick(row, column)"
+        @click="handleSquareClick(file, rank)"
       />
     </div>
   </div>
