@@ -3,6 +3,8 @@
   --light-secondary: #c7c6c5;
   --dark-main: #312e2b;
   --dark-secondary: #272522;
+  --chess-light: #eeeed2;
+  --chess-dark: #769656;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

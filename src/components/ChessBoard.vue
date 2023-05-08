@@ -35,17 +35,17 @@ const files: Array<FileLetter> = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
   .square {
     flex: 1;
-    background-color: #769656;
+    background-color: var(--chess-dark);
     &:nth-child(odd) {
-      background-color: #eeeed2;
+      background-color: var(--chess-light);
     }
   }
 }
 .rank:nth-child(odd) {
   .square {
-    background-color: #eeeed2;
+    background-color: var(--chess-light);
     &:nth-child(odd) {
-      background-color: #769656;
+      background-color: var(--chess-dark);
     }
   }
 }

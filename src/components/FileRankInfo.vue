@@ -30,10 +30,10 @@
     font-weight: 800;
   }
   .coordinate-dark {
-    fill: #eeeed2;
+    fill: var(--chess-light);
   }
   .coordinate-light {
-    fill: #779952;
+    fill: var(--chess-dark);
   }
 }
 </style>
