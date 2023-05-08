@@ -1,1 +1,2 @@
-export type Coordinate = { file: number; rank: number };
+export type FileLetter = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h";
+export type Coordinate = { file: FileLetter; rank: number };

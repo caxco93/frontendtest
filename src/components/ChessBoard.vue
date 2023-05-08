@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { store } from "@/store.ts";
 import { Coordinate } from "@/types";
-const getSquareClass = (row: number, column: number): string => {
-  return (row + column) % 2 !== 0 ? "light" : "dark";
-};
 function handleSquareClick(row: number, column: number) {
   const coordinate: Coordinate = { file: column, rank: row };
   store.addHighlight(coordinate);
@@ -17,14 +14,13 @@ function handleSquareClick(row: number, column: number) {
         v-for="column in 8"
         :key="column"
         class="square"
-        :class="getSquareClass(row, column)"
         @click="handleSquareClick(row, column)"
       />
     </div>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .board {
   max-width: 100vh;
   margin: auto;
@@ -36,15 +32,21 @@ function handleSquareClick(row: number, column: number) {
 .rank {
   display: flex;
   flex: 1;
-}
 
-.square {
-  flex: 1;
+  .square {
+    flex: 1;
+    background-color: #769656;
+    &:nth-child(odd) {
+      background-color: #eeeed2;
+    }
+  }
 }
-.light {
-  background-color: #eeeed2;
-}
-.dark {
-  background-color: #769656;
+.rank:nth-child(odd) {
+  .square {
+    background-color: #eeeed2;
+    &:nth-child(odd) {
+      background-color: #769656;
+    }
+  }
 }
 </style>
