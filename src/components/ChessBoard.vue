@@ -2,7 +2,7 @@
 import { store } from "@/store.ts";
 import { Coordinate } from "@/types";
 const getSquareClass = (row: number, column: number): string => {
-  return (row + column) % 2 === 0 ? "light" : "dark";
+  return (row + column) % 2 !== 0 ? "light" : "dark";
 };
 function handleSquareClick(row: number, column: number) {
   const coordinate: Coordinate = { file: column, rank: row };
@@ -12,21 +12,35 @@ function handleSquareClick(row: number, column: number) {
 
 <template>
   <div class="board">
-    <template v-for="row in 8">
+    <div v-for="row in 8" :key="row" class="rank">
       <div
         v-for="column in 8"
-        :key="`${row}${column}`"
+        :key="column"
         class="square"
         :class="getSquareClass(row, column)"
         @click="handleSquareClick(row, column)"
       />
-    </template>
+    </div>
   </div>
 </template>
 
 <style scoped>
-@import "@/styles/board.css";
+.board {
+  max-width: 100vh;
+  margin: auto;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
 
+.rank {
+  display: flex;
+  flex: 1;
+}
+
+.square {
+  flex: 1;
+}
 .light {
   background-color: #eeeed2;
 }
