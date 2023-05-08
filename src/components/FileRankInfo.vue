@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <svg viewBox="0 0 100 100" class="overlay">
+  <svg viewBox="0 0 100 100" class="board overlay">
     <text x=".75" y="3.5" font-size="2.8" class="coordinate-light">8</text>
     <text x=".75" y="15.75" font-size="2.8" class="coordinate-dark">7</text>
     <text x=".75" y="28.25" font-size="2.8" class="coordinate-light">6</text>
@@ -22,16 +22,9 @@
 </template>
 
 <style scoped lang="scss">
+@import "@/styles/board.css";
+@import "@/styles/overlay.css";
 .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-
   .coordinate-light,
   .coordinate-dark {
     font-weight: 800;
